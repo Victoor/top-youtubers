@@ -30,7 +30,13 @@ function Channel(name, id) {
 
     self.getSubcribersCount = function () {
         var apiKey = (new APIkeys()).getRandomKey();
-        var url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername=" + self.id +  "&key=" + apiKey;
+        var field = "forUsername";
+
+        if (self.id.startsWith("UC")) {
+            field = "id";
+        }
+
+        var url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&" + field + "=" + self.id +  "&key=" + apiKey;
 
         return new Promise(function(success) {
             getText(url, function(e) {
@@ -107,7 +113,15 @@ function getText(url, callback) {
 var channelList = new ChannelList();
 channelList.addChannel(new Channel("Yuufit", "yuufitness"));
 channelList.addChannel(new Channel("PowerExplosive", "powerexplosive"));
-channelList.addChannel(new Channel("Sergio Peinado", "sergiopeinadotrainer"));
+channelList.addChannel(new Channel("Sergio Peinado", "EntrenaSergioPeinado"));
+channelList.addChannel(new Channel("Jesús López Trainer", "pikertrainer"));
+channelList.addChannel(new Channel("Miguel Camarena Salud", "UCkU1UYWL9eRJBNdM1-u_nFA"));
+channelList.addChannel(new Channel("The Fit Club", "UCIwg1IqJK0QOsz-g15JT0oQ"));
+channelList.addChannel(new Channel("Imparable.tv", "UCs73lmiI_-JXj_7mjCOiPIg"));
+channelList.addChannel(new Channel("Jose Alberto Benítez", "UC3o5fEgnWdpD2ytEysgitEQ"));
+channelList.addChannel(new Channel("Anabel Ávila", "UCqn4DXeDNMvBxTVSmdVt6rA"));
+channelList.addChannel(new Channel("ValentiEstaLoco", "UCG5IfQYv9S9HIsrICDcZaZQ"));
+channelList.addChannel(new Channel("Strongman Tarrako", "UCsWZJrg5AROp7ePbBJaMZ3w"));
 
 window.onload = function() {
     channelList.setTargetElement("#channelListTable tbody");
