@@ -24,7 +24,7 @@ function Channel(name, id) {
         var trElement = document.createElement("tr");
         trElement.innerHTML = "<td class='position'>" + self.position + "</td>" +
             "<td class='name'><a target='_blank' href='" + self.url + "'>"+self.name+"</a></td>" +
-            "<td class='sub-count' data-channel-id='" + self.id + "'>" + self.subscribersCount.formatMoney(2, ',', '.') + "</td>";
+            "<td class='sub-count' data-channel-id='" + self.id + "'>" + self.subscribersCount.formatMoney(0, ',', '.') + "</td>";
 
         return trElement;
     }
