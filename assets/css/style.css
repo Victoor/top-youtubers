@@ -1,0 +1,45 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#wrapper {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section {
+    margin: 60px 0;
+    text-align: center;
+}
+
+#header.section {
+    font-size: 1.5em;
+}
+#header.section p {
+    color: #999;
+}
+#header.section p a {
+    color: #666;
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+#header.section p a:hover {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+}
+
+table th {
+    text-align: left;
+}
+table tr td {
+    padding: 5px 0;
+}
+
+table .sub-count {
+    text-align: right;
+}

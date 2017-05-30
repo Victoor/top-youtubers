@@ -23,7 +23,7 @@ function Channel(name, id) {
         var trElement = document.createElement("tr");
         trElement.innerHTML = "<td class='position'>" + self.position + "</td>" +
             "<td class='name'>"+self.name+"</td>" +
-            "<td class='sub-count' data-channel-id='" + self.id + "'>" + self.subscribersCount + "</td>";
+            "<td class='sub-count' data-channel-id='" + self.id + "'>" + self.subscribersCount.formatMoney(2, ',', '.') + "</td>";
 
         return trElement;
     }
@@ -109,6 +109,17 @@ function getText(url, callback) {
     request.open('GET', url);
     request.send();
 }
+
+String.prototype.formatMoney = function(c, d, t){
+    var n = this,
+        c = isNaN(c = Math.abs(c)) ? 2 : c,
+        d = d == undefined ? "." : d,
+        t = t == undefined ? "," : t,
+        s = n < 0 ? "-" : "",
+        i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+        j = (j = i.length) > 3 ? j % 3 : 0;
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+};
 
 var channelList = new ChannelList();
 channelList.addChannel(new Channel("Yuufit", "yuufitness"));
