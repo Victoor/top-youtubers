@@ -2,6 +2,15 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+a {
+    color: dodgerblue;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+a:hover {
+    color: #2861ff
+}
+
 #wrapper {
     max-width: 600px;
     width: 100%;

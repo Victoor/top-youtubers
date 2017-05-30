@@ -15,6 +15,7 @@ function Channel(name, id) {
     var self = this;
 
     self.position = 0;
+    self.url = "";
     self.name = name;
     self.id = id;
     self.subscribersCount = 0;
@@ -22,7 +23,7 @@ function Channel(name, id) {
     self.getHTMLElement = function() {
         var trElement = document.createElement("tr");
         trElement.innerHTML = "<td class='position'>" + self.position + "</td>" +
-            "<td class='name'>"+self.name+"</td>" +
+            "<td class='name'><a target='_blank' href='" + self.url + "'>"+self.name+"</a></td>" +
             "<td class='sub-count' data-channel-id='" + self.id + "'>" + self.subscribersCount.formatMoney(2, ',', '.') + "</td>";
 
         return trElement;
@@ -41,8 +42,10 @@ function Channel(name, id) {
         return new Promise(function(success) {
             getText(url, function(e) {
                 e = JSON.parse(e);
+                console.log(e);
                 if (e.items[0]) {
                     self.subscribersCount = e.items[0].statistics.subscriberCount;
+                    self.url = "https://www.youtube.com/channel/" + e.items[0].id;
                 }
 
                 success(self);
