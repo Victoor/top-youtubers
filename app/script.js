@@ -170,6 +170,7 @@ channelList.addChannel(new Channel("Rubén Cáceres", "UCy52hu6wO3BM4re-TS7reNg"
 channelList.addChannel(new Channel("Sergio Espinar", "UCm4Z5kk8WesWrIVZIKUnD2w"));
 channelList.addChannel(new Channel("TonyGFitness", "UCSgafS82M70sO9mxw3nKkOA"));
 channelList.addChannel(new Channel("INVICTHOR", "UConubCPNIs8pTKEmm92Gzgg"));
+channelList.addChannel(new Channel("Iron Masters", "UCw8Cyw_iallmnT2o_32ojcQ"));
 
 window.onload = function() {
     channelList.setTargetElement("#channelListTable tbody");
