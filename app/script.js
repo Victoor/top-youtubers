@@ -171,6 +171,13 @@ channelList.addChannel(new Channel("Sergio Espinar", "UCm4Z5kk8WesWrIVZIKUnD2w")
 channelList.addChannel(new Channel("TonyGFitness", "UCSgafS82M70sO9mxw3nKkOA"));
 channelList.addChannel(new Channel("INVICTHOR", "UConubCPNIs8pTKEmm92Gzgg"));
 channelList.addChannel(new Channel("Iron Masters", "UCw8Cyw_iallmnT2o_32ojcQ"));
+channelList.addChannel(new Channel("Sascha Fitness", "saschafitness"));
+channelList.addChannel(new Channel("Carol del Toro", "UCbOOwMTPTcYppa3MLV_uVjw"));
+channelList.addChannel(new Channel("Naty Arcila", "NatyArcilaZ"));
+channelList.addChannel(new Channel("Esttik", "esttikSP"));
+channelList.addChannel(new Channel("My Protein ES", "UCWH731WCPou_eg3FLyDY2tA"));
+channelList.addChannel(new Channel("Julian Tanaka", "UC77coKbN9vISzm7YsLRTvbw"));
+channelList.addChannel(new Channel("Anthoni Moltanvan", "AnthoniMontalvan"));
 
 window.onload = function() {
     channelList.setTargetElement("#channelListTable tbody");
